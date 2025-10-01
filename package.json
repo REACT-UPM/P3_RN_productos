@@ -14,7 +14,7 @@
   "capturesFolder": "miscapturas",
   "capturesNumber": 2,
   "dependencies": {
-    "autocorector": "^3.5.0",
+    "autocorector": "^4.0.1",
     "expo":"~51.0.28",
     "expo-status-bar": "~1.12.1",
     "jest-expo": "^51.0.4",
