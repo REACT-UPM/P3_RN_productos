@@ -30,7 +30,30 @@ const myproduct = {
         "https://dummyjson.com/image/i/products/66/3.jpg",
         "https://dummyjson.com/image/i/products/66/4.JPG",
         "https://dummyjson.com/image/i/products/66/thumbnail.jpg"
-      ]
+      ],
+      "reviews": [
+        {
+          "comment": "Very unhappy with my purchase!",
+          "date": "2024-05-23T08:56:21.618Z",
+          "rating": 2,
+          "reviewerEmail": "john.doe@x.dummyjson.com",
+          "reviewerName": "John Doe"
+        },
+        {
+          "comment": "Not as described!",
+          "date": "2024-05-23T08:56:21.618Z",
+          "rating": 2,
+          "reviewerEmail": "nolan.gonzalez@x.dummyjson.com",
+          "reviewerName": "Nolan Gonzalez"
+        },
+        {
+          "comment": "Very satisfied!",
+          "date": "2024-05-23T08:56:21.618Z",
+          "rating": 5,
+          "reviewerEmail": "scarlett.wright@x.dummyjson.com",
+          "reviewerName": "Scarlett Wright"
+        }
+      ],
     }
   ]
 };
@@ -169,6 +192,29 @@ test(JSON.stringify(testinfo), async () => {
   const item_7 = await screen.findByTestId('detalle');
   expect(item_7).toBeEnabled();
   expect(item_7).toHaveTextContent('Steel Analog Couple Watches');
+
+  const thebtn2 = await screen.findByTestId('volver');
+  expect(thebtn2).toBeEnabled();
+});
+
+testinfo = {
+  name: "La aplicación en la página del producto renderiza los últimos 3 comentarios del producto",
+  score: 1,
+  msg_ok: "Los comentarios se renderizan correctamente",
+  msg_error: "Los comentarios NO se renderizan correctamente"
+}
+test(JSON.stringify(testinfo), async () => {
+  render(<App/>);
+  const thebtn = await screen.findByTestId('button_66');
+  expect(thebtn).toBeEnabled();
+  fireEvent.press(thebtn);
+  
+  const item_7 = await screen.findByTestId('comments');
+  expect(item_7).toBeEnabled();
+
+  const item_8 = await screen.findByTestId('mediaresultado');
+  expect(item_8).toBeEnabled();
+  expect(item_8).toHaveTextContent('Calificación media: 3.00');
 
   const thebtn2 = await screen.findByTestId('volver');
   expect(thebtn2).toBeEnabled();
