@@ -113,7 +113,7 @@ test(JSON.stringify(testinfo), async () => {
 
 testinfo = {
   name: "La aplicación tiene un componente SearchPage que renderiza los productos que recibe",
-  score: 2,
+  score: 1.5,
   msg_ok: "Componente SearchPage encontrado productos renderizados",
   msg_error: "El componente SearchPage no se ha encontrado o no renderiza correctamente los productos"
 }
@@ -131,7 +131,7 @@ test(JSON.stringify(testinfo), async () => {
 
 testinfo = {
   name: "La aplicación maneja el valor del input y filtra los resultados por su título al pulsar el button",
-  score: 2,
+  score: 1.5,
   msg_ok: "El input de la aplicación funciona correctamente y filtra al pulsar el botón",
   msg_error: "El input de la aplicación NO funciona correctamente o NO filtra al pulsar el botón"
 }
